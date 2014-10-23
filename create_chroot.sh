@@ -26,7 +26,7 @@ main() {
 
 	echo ${SUITE} ${APT_REPO} ${DISTRO}
 
-	CHROOT_DIR=/var/local/${DISTRO}-${SUITE}-32-ldap-auth
+	CHROOT_DIR=/var/local/${DISTRO}-${SUITE}-32
 	sudo mkdir -p ${CHROOT_DIR}
 
 	sudo debootstrap --foreign --arch=i386 ${SUITE} ${CHROOT_DIR} \
