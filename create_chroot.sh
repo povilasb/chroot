@@ -31,13 +31,17 @@ main() {
 		DISTRO=debian
 	fi
 
-	echo ${SUITE} ${APT_REPO} ${DISTRO}
+	echo "Pre install info: ${SUITE} ${APT_REPO} ${DISTRO}"
 
 	CHROOT_DIR=/var/local/${DISTRO}-${SUITE}-32
 	sudo mkdir -p ${CHROOT_DIR}
 
 	sudo debootstrap --foreign --arch=i386 ${SUITE} ${CHROOT_DIR} \
-		${APT_REPO}
+			${APT_REPO}
+
+	echo "chroot was successfully created to ${CHROOT_DIR}."
+	echo "Now chroot to ${CHROOT_DIR} and execute " \
+		"'/debootstrap/debootstrap --second-stage' to finish."
 }
 
 
