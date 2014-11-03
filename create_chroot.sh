@@ -13,6 +13,7 @@ main() {
 	APT_REPO=
 	ARCH=i386
 
+	# Ubuntu
 	if [ "$1" = "lucid" ]; then
 		SUITE=lucid
 		APT_REPO=http://archive.ubuntu.com/ubuntu
@@ -22,6 +23,12 @@ main() {
 		SUITE=oneiric
 		APT_REPO=http://old-releases.ubuntu.com/ubuntu
 		DISTRO=ubuntu
+
+	# Debian
+	elif [ "$1" = "sarge" ]; then
+		SUITE=sarge
+		APT_REPO=http://archive.debian.org/debian
+		DISTRO=debian
 	fi
 
 	echo ${SUITE} ${APT_REPO} ${DISTRO}
