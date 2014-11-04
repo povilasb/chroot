@@ -39,9 +39,9 @@ main() {
 	sudo debootstrap --foreign --arch=i386 ${SUITE} ${CHROOT_DIR} \
 			${APT_REPO}
 
+	sudo chroot ${CHROOT_DIR} /debootstrap/debootstrap --second-stage
+
 	echo "chroot was successfully created to ${CHROOT_DIR}."
-	echo "Now chroot to ${CHROOT_DIR} and execute " \
-		"'/debootstrap/debootstrap --second-stage' to finish."
 }
 
 
